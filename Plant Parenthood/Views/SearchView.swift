@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct SearchView: View {
+    let names = ["Holly", "Josh", "Rhonda", "Ted"]
+    @State private var searchText = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.green.opacity(0.4)
+            .edgesIgnoringSafeArea(.all)
+            NavigationView {
+                        List {
+                            ForEach(searchResults, id: \.self) { name in
+                                NavigationLink(destination: Text(name)) {
+                                    Text(name)
+                                }
+                            }
+                        }
+                        .searchable(text: $searchText)
+                        .navigationTitle("Plant Search")
+                    }
+        }
+    }
+    var searchResults: [String] {
+        if searchText.isEmpty {
+            return names
+        } else {
+            return names.filter { $0.contains(searchText) }
+        }
     }
 }
 
