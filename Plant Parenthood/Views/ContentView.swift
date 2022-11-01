@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab = "Plant Parenthood"
     var body: some View {
         TabView {
-            Text("My Plants")
+            HomeView()
+                .font(.title)
+                .fontWeight(.bold)
                 .tabItem {
                     Image(systemName: "house")
                     Text("My Plants")
@@ -18,8 +21,7 @@ struct ContentView: View {
                 .toolbar(.visible, for: .tabBar)
                 .toolbarBackground(Color.brown, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-            
-            Text("Search")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Plant Search")
@@ -27,8 +29,7 @@ struct ContentView: View {
                 .toolbar(.visible, for: .tabBar)
                 .toolbarBackground(Color.brown, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-            
-            Text("Maintenance Schedule")
+            ScheduleView()
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Schedule")
@@ -36,7 +37,7 @@ struct ContentView: View {
                 .toolbar(.visible, for: .tabBar)
                 .toolbarBackground(Color.brown, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-            
+            //WishListView()
             Text("Wishlist")
                 .tabItem {
                     Image(systemName: "heart")
