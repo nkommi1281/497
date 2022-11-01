@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411898452911E1430050C6C2 /* AddPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411898442911E1430050C6C2 /* AddPlantView.swift */; };
+		41B8807029109D6C005367CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8806F29109D6C005367CB /* HomeView.swift */; };
+		41B8807229109D97005367CB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8807129109D97005367CB /* SearchView.swift */; };
+		41B8807429109DAA005367CB /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8807329109DAA005367CB /* ScheduleView.swift */; };
+		41B880762911D456005367CB /* MyPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B880752911D456005367CB /* MyPlantsView.swift */; };
 		41D6E39B290075B60007A76D /* Plant_ParenthoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6E39A290075B60007A76D /* Plant_ParenthoodApp.swift */; };
 		41D6E39D290075B60007A76D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6E39C290075B60007A76D /* ContentView.swift */; };
 		41D6E39F290075B70007A76D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D6E39E290075B70007A76D /* Assets.xcassets */; };
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411898442911E1430050C6C2 /* AddPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantView.swift; sourceTree = "<group>"; };
+		41B8806F29109D6C005367CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		41B8807129109D97005367CB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		41B8807329109DAA005367CB /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		41B880752911D456005367CB /* MyPlantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsView.swift; sourceTree = "<group>"; };
 		41D6E397290075B60007A76D /* Plant Parenthood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Parenthood.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6E39A290075B60007A76D /* Plant_ParenthoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant_ParenthoodApp.swift; sourceTree = "<group>"; };
 		41D6E39C290075B60007A76D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41B8806E2909E1C1005367CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41D6E39C290075B60007A76D /* ContentView.swift */,
+				41B8806F29109D6C005367CB /* HomeView.swift */,
+				41B8807129109D97005367CB /* SearchView.swift */,
+				41B8807329109DAA005367CB /* ScheduleView.swift */,
+				41B880752911D456005367CB /* MyPlantsView.swift */,
+				411898442911E1430050C6C2 /* AddPlantView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		41D6E38E290075B60007A76D = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				41D6E39A290075B60007A76D /* Plant_ParenthoodApp.swift */,
-				41D6E39C290075B60007A76D /* ContentView.swift */,
+				41B8806E2909E1C1005367CB /* Views */,
 				41D6E39E290075B70007A76D /* Assets.xcassets */,
 				41D6E3A0290075B70007A76D /* Preview Content */,
 			);
@@ -257,7 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411898452911E1430050C6C2 /* AddPlantView.swift in Sources */,
+				41B8807429109DAA005367CB /* ScheduleView.swift in Sources */,
+				41B8807229109D97005367CB /* SearchView.swift in Sources */,
+				41B8807029109D6C005367CB /* HomeView.swift in Sources */,
 				41D6E39D290075B60007A76D /* ContentView.swift in Sources */,
+				41B880762911D456005367CB /* MyPlantsView.swift in Sources */,
 				41D6E39B290075B60007A76D /* Plant_ParenthoodApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

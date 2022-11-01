@@ -16,14 +16,14 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .tabItem {
                     Image(systemName: "house")
-                    Text("My Plants")
+                    Text("Home")
                 }
                 .toolbar(.visible, for: .tabBar)
                 .toolbarBackground(Color.brown, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-            SearchView()
+            MyPlantsView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "heart")
                     Text("Plant Search")
                 }
                 .toolbar(.visible, for: .tabBar)
@@ -37,11 +37,10 @@ struct ContentView: View {
                 .toolbar(.visible, for: .tabBar)
                 .toolbarBackground(Color.brown, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
-            //WishListView()
-            Text("Wishlist")
+            SearchView()
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("Wishlist")
+                    Image(systemName: "magnifyingglass")
+                    Text("Plant Search")
                 }
                 .toolbar(.visible, for: .tabBar)
                 .toolbarBackground(Color.brown, for: .tabBar)

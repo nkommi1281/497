@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    let names = ["Holly", "Josh", "Rhonda", "Ted"]
+    let names = ["Basil", "Fern", "Philodendron", "Snake Plant"]
     @State private var searchText = ""
     
     var body: some View {
