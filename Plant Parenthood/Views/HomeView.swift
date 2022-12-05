@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var tabController: TabController
     var body: some View {
         NavigationStack {
             ZStack {
@@ -18,12 +19,12 @@ struct HomeView: View {
                         .font(.system(size: 37))
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
-                        .padding(.top, 100)
+                        .padding(.top, 70)
                     Text("Welcome")
                         .italic()
                         .font(.system(size: 27))
                         .fontWeight(.bold)
-                        .padding(.bottom, 90)
+                        .padding(.bottom, 50)
                     HStack {
                         NavigationLink(destination: MyPlantsView()) {
                             ZStack {
@@ -42,7 +43,9 @@ struct HomeView: View {
                                     .fontWeight(.bold)
                                     .buttonStyle(.bordered)
                                     .controlSize(.large)
-//                                    .padding(.trailing, 10)
+                                Button("                    ") {
+                                    tabController.open(.plants)
+                                }.controlSize(.large)
                             }
                         }
                         NavigationLink(destination: SearchView()) {
@@ -62,6 +65,9 @@ struct HomeView: View {
                                     .buttonStyle(.bordered)
                                     .controlSize(.large)
                                     .fontWeight(.bold)
+                                Button("                    ") {
+                                    tabController.open(.search)
+                                }.controlSize(.large)
                             }
                         }
                     }
@@ -78,8 +84,10 @@ struct HomeView: View {
                                 .tint(.white)
                                 .buttonStyle(.bordered)
                                 .controlSize(.large)
-                                .fontWeight(.bold
-                                )
+                                .fontWeight(.bold)
+                            Button("                         ") {
+                                tabController.open(.schedule)
+                            }.controlSize(.large)
                         }
                     }
                     Spacer()
@@ -94,3 +102,5 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
+

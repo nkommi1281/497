@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ScheduleView: View {
+
     @State private var date = Date()
     let tasks = ["Water - Plant #1", "Fertilize - Plant #2", "Water - Plant #2"]
     var body: some View {

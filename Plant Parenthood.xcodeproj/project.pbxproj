@@ -40,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		411898442911E1430050C6C2 /* AddPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantView.swift; sourceTree = "<group>"; };
+		4190FAAF293D74A6001D174C /* Plant-Parenthood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Plant-Parenthood-Info.plist"; sourceTree = SOURCE_ROOT; };
 		41B8806F29109D6C005367CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		41B8807129109D97005367CB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		41B8807329109DAA005367CB /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		41D6E399290075B60007A76D /* Plant Parenthood */ = {
 			isa = PBXGroup;
 			children = (
+				4190FAAF293D74A6001D174C /* Plant-Parenthood-Info.plist */,
 				41D6E39A290075B60007A76D /* Plant_ParenthoodApp.swift */,
 				41B8806E2909E1C1005367CB /* Views */,
 				41D6E39E290075B70007A76D /* Assets.xcassets */,
@@ -445,8 +447,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Plant Parenthood/Preview Content\"";
+				DEVELOPMENT_TEAM = PS76ZXS6B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Plant-Parenthood-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app allows users to photograph their houseplants to make a profile for each plant.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -473,8 +478,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Plant Parenthood/Preview Content\"";
+				DEVELOPMENT_TEAM = PS76ZXS6B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Plant-Parenthood-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app allows users to photograph their houseplants to make a profile for each plant.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

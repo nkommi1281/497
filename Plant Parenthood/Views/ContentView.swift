@@ -7,45 +7,66 @@
 
 import SwiftUI
 
+enum Tab {
+    case home
+    case plants
+    case schedule
+    case search
+}
+
+class TabController: ObservableObject {
+    @Published var activeTab = Tab.home
+
+    func open(_ tab: Tab) {
+        activeTab = tab
+    }
+}
+
 struct ContentView: View {
-    @State private var selectedTab = "Plant Parenthood"
+    @StateObject private var tabController = TabController()
+    
     var body: some View {
-        TabView {
+        TabView(selection: $tabController.activeTab) {
             HomeView()
-                .font(.title)
-                .fontWeight(.bold)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                .font(.title)
+                .fontWeight(.bold)
+                .tag(Tab.home)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown, for: .tabBar)
-                .toolbarColorScheme(.dark, for: .tabBar)
+                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                //.toolbarColorScheme(.light, for: .tabBar)
             MyPlantsView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("Plant Search")
+                    Text("My Plants")
                 }
+                .tag(Tab.plants)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown, for: .tabBar)
-                .toolbarColorScheme(.dark, for: .tabBar)
+                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                //.toolbarColorScheme(.light, for: .tabBar)
             ScheduleView()
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Schedule")
                 }
+                .tag(Tab.schedule)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown, for: .tabBar)
-                .toolbarColorScheme(.dark, for: .tabBar)
+                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                //.toolbarColorScheme(.light, for: .tabBar)
             SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Plant Search")
                 }
+                .tag(Tab.search)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown, for: .tabBar)
-                .toolbarColorScheme(.dark, for: .tabBar)
+                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                //.toolbarColorScheme(.light, for: .tabBar)
         }
+        .environmentObject(tabController)
     }
 }
 

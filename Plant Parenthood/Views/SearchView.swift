@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    
     let names = ["Basil", "Fern", "Philodendron", "Snake Plant"]
     @State private var searchText = ""
     
@@ -16,16 +17,17 @@ struct SearchView: View {
             Color.green.opacity(0.4)
             .edgesIgnoringSafeArea(.all)
             NavigationView {
-                        List {
-                            ForEach(searchResults, id: \.self) { name in
-                                NavigationLink(destination: Text(name)) {
-                                    Text(name)
-                                }
-                            }
+                List {
+                    ForEach(searchResults, id: \.self) { name in
+                        NavigationLink(destination: Text(name)) {
+                            Text(name)
                         }
-                        .searchable(text: $searchText)
-                        .navigationTitle("Plant Search")
                     }
+                }
+                .background(Color.green)
+                .searchable(text: $searchText)
+                .navigationTitle("Plant Search")
+            }
         }
     }
     var searchResults: [String] {

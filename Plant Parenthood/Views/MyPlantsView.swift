@@ -8,33 +8,43 @@
 import SwiftUI
 
 struct MyPlantsView: View {
+
+    let items = Array(1...10).map({"image\($0)"})
+    
+    let layout = [
+        GridItem(.flexible(minimum: 75)),
+        GridItem(.flexible(minimum: 75))
+    ]
+    
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.green.opacity(0.4)
-                    .edgesIgnoringSafeArea(.all)
-                VStack() {
-                    HStack() {
-                        Text("My Plants")
-                            .font(.system(size: 37))
-                            .fontWeight(.bold)
-                            .padding(.top, 30)
+            NavigationView {
+                ZStack {
+                    Color.green.opacity(0.4)
+                        .edgesIgnoringSafeArea(.all)
+                    ScrollView(.vertical) {
+                        LazyVGrid(columns: layout, content: {
+                            ForEach(items, id: \.self) { item in
+                                Image(item)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .border(Color.secondary)
+                                    .cornerRadius(10)
+                                    .padding()
+                            }
+                        })
+                    }
+                    .navigationTitle("My Plants")
+                    .toolbar {
                         NavigationLink(destination: AddPlantView()) {
                             Image(systemName: "plus.circle")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 30, height:30)
-                                .padding(.top, 30)
                                 .foregroundColor(.black)
                         }
                     }
-                    Spacer()
-                    HStack() {
-                        
-                    }
                 }
             }
-        }
     }
 }
 
