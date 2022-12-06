@@ -24,7 +24,7 @@ class TabController: ObservableObject {
 
 struct ContentView: View {
     @StateObject private var tabController = TabController()
-    
+    @EnvironmentObject var thePlantItemList: PlantItemList
     var body: some View {
         TabView(selection: $tabController.activeTab) {
             HomeView()

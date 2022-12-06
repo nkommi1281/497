@@ -19,6 +19,9 @@
 		41D6E3AC290075B80007A76D /* Plant_ParenthoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6E3AB290075B80007A76D /* Plant_ParenthoodTests.swift */; };
 		41D6E3B6290075B80007A76D /* Plant_ParenthoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6E3B5290075B80007A76D /* Plant_ParenthoodUITests.swift */; };
 		41D6E3B8290075B80007A76D /* Plant_ParenthoodUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6E3B7290075B80007A76D /* Plant_ParenthoodUITestsLaunchTests.swift */; };
+		41FB1142293E47AA0005B8E3 /* PlantProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB1141293E47AA0005B8E3 /* PlantProfileView.swift */; };
+		41FB1145293E4D7B0005B8E3 /* PlantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB1144293E4D7B0005B8E3 /* PlantItem.swift */; };
+		41FB1147293E4F830005B8E3 /* PlantItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB1146293E4F830005B8E3 /* PlantItemList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		41D6E3B1290075B80007A76D /* Plant ParenthoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plant ParenthoodUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6E3B5290075B80007A76D /* Plant_ParenthoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant_ParenthoodUITests.swift; sourceTree = "<group>"; };
 		41D6E3B7290075B80007A76D /* Plant_ParenthoodUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant_ParenthoodUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		41FB1141293E47AA0005B8E3 /* PlantProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProfileView.swift; sourceTree = "<group>"; };
+		41FB1144293E4D7B0005B8E3 /* PlantItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantItem.swift; sourceTree = "<group>"; };
+		41FB1146293E4F830005B8E3 /* PlantItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantItemList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 				41B8807329109DAA005367CB /* ScheduleView.swift */,
 				41B880752911D456005367CB /* MyPlantsView.swift */,
 				411898442911E1430050C6C2 /* AddPlantView.swift */,
+				41FB1141293E47AA0005B8E3 /* PlantProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 		41D6E399290075B60007A76D /* Plant Parenthood */ = {
 			isa = PBXGroup;
 			children = (
+				41FB1143293E4D210005B8E3 /* Models */,
 				4190FAAF293D74A6001D174C /* Plant-Parenthood-Info.plist */,
 				41D6E39A290075B60007A76D /* Plant_ParenthoodApp.swift */,
 				41B8806E2909E1C1005367CB /* Views */,
@@ -150,6 +158,15 @@
 				41D6E3B7290075B80007A76D /* Plant_ParenthoodUITestsLaunchTests.swift */,
 			);
 			path = "Plant ParenthoodUITests";
+			sourceTree = "<group>";
+		};
+		41FB1143293E4D210005B8E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41FB1144293E4D7B0005B8E3 /* PlantItem.swift */,
+				41FB1146293E4F830005B8E3 /* PlantItemList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +303,11 @@
 				41B8807429109DAA005367CB /* ScheduleView.swift in Sources */,
 				41B8807229109D97005367CB /* SearchView.swift in Sources */,
 				41B8807029109D6C005367CB /* HomeView.swift in Sources */,
+				41FB1145293E4D7B0005B8E3 /* PlantItem.swift in Sources */,
+				41FB1142293E47AA0005B8E3 /* PlantProfileView.swift in Sources */,
 				41D6E39D290075B60007A76D /* ContentView.swift in Sources */,
 				41B880762911D456005367CB /* MyPlantsView.swift in Sources */,
+				41FB1147293E4F830005B8E3 /* PlantItemList.swift in Sources */,
 				41D6E39B290075B60007A76D /* Plant_ParenthoodApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

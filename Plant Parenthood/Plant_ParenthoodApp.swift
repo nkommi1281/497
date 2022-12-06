@@ -11,7 +11,7 @@ import SwiftUI
 struct Plant_ParenthoodApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(PlantItemList([]))
         }
     }
 }
