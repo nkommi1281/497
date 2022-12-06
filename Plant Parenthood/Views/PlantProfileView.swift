@@ -11,6 +11,7 @@ struct PlantProfileView: View {
     @EnvironmentObject var thePlantItemList: PlantItemList
     @State var showModal: Bool = false
     @State var showModal2: Bool = false
+    @State private var isPresentingConfirm: Bool = false
     var plantItem: PlantItem
     var body: some View {
         NavigationStack {
@@ -51,6 +52,14 @@ struct PlantProfileView: View {
                                     self.showModal2.toggle()
                                 }
                         }
+                        ForEach(plantItem.getTasks(), id: \.self) { task in
+                             HStack {
+                                 Text(task.name).font(.system(size: 15)).fontWeight(.bold).padding()
+                                 Spacer()
+                                 Text(task.frequency).font(.system(size: 15)).fontWeight(.bold).padding()
+                             }
+ //                            Text(task.name).font(.system(size: 22)).fontWeight(.bold).padding()
+                         }
                         Spacer()
                     }
                 }
@@ -63,25 +72,28 @@ struct PlantProfileView: View {
                         RoundedRectangle(cornerRadius: 16)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .overlay(AddTaskView(showModal2: self.$showModal2))
+                            .overlay(AddTaskView(showModal2: self.$showModal2, plantItem: plantItem))
                     }
                     .transition(.move(edge: .bottom))
                 }
             }
         }
         .toolbar {
-            Button(action: {thePlantItemList.removePlantItem(trashPlantItem: plantItem)}) {
+            Button(action: {
+                isPresentingConfirm.toggle()
+            }) {
                 Image(systemName: "trash")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height:30)
                     .foregroundColor(.black)
+            }.confirmationDialog("Are you sure?", isPresented: $isPresentingConfirm) {
+                Button("Delete \(plantItem.plantItemName)?", role: .destructive) {
+                                        thePlantItemList.removePlantItem(trashPlantItem: plantItem)
+                }
             }
         }
-        .navigationTitle(plantItem.plantItemName).font(.system(size: 50))
         .navigationBarTitleDisplayMode(.inline)
-
-
     }
 }
 

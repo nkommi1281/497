@@ -3,7 +3,8 @@ import SwiftUI
 struct ScheduleView: View {
 
     @State private var date = Date()
-    let tasks = ["Water - Plant #1", "Fertilize - Plant #2", "Water - Plant #2"]
+    @EnvironmentObject var thePlantItemList: PlantItemList
+    //let tasks = ["Water - Plant #1", "Fertilize - Plant #2", "Water - Plant #2"]
     var body: some View {
         ZStack {
             Color.green.opacity(0.4)
@@ -22,10 +23,12 @@ struct ScheduleView: View {
                 Text("Tasks for: \(date.formatted(.dateTime.day().month().year()))")
                     .fontWeight(.bold)
                 List {
-                    ForEach(tasks, id: \.self) { task in
-                        NavigationLink(destination: Text(task)) {
-                            Text(task)
-                                .fontWeight(.bold)
+                    ForEach(thePlantItemList.getPlantItemList(), id: \.self) { item in
+                         ForEach(item.getTasks(), id: \.self) { task in
+                             if task.days.contains(date.formatted(.dateTime.day().month().year())){
+                                 Text("\(task.name) for plant: \(item.plantItemName)")
+                                     .fontWeight(.bold)
+                             }
                         }
                     }
                     .listRowBackground(Color.purple.opacity(0.2))
