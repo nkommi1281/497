@@ -23,4 +23,8 @@ class PlantItemList: ObservableObject {
         return itemList
     }
     
+    public func removePlantItem (trashPlantItem: PlantItem) {
+        itemList.removeAll(where: {$0.plantItemName == trashPlantItem.plantItemName})
+    }
+    
 }

@@ -13,10 +13,6 @@ struct PlantItem: Hashable {
     var plantItemImageName: String
     var plantItemURL: String
     
-//    var plantItemImage: Image {
-//        Image(plantItemImageName)
-//    }
-    
     init(name: String, species: String, imageName: String, url: String) {
         plantItemName = name
         plantItemSpecies = species

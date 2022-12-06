@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		411898452911E1430050C6C2 /* AddPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411898442911E1430050C6C2 /* AddPlantView.swift */; };
+		411CF8BF293ECBAF00869078 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411CF8BE293ECBAF00869078 /* AddTaskView.swift */; };
 		41B8807029109D6C005367CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8806F29109D6C005367CB /* HomeView.swift */; };
 		41B8807229109D97005367CB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8807129109D97005367CB /* SearchView.swift */; };
 		41B8807429109DAA005367CB /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8807329109DAA005367CB /* ScheduleView.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		411898442911E1430050C6C2 /* AddPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantView.swift; sourceTree = "<group>"; };
+		411CF8BE293ECBAF00869078 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		4190FAAF293D74A6001D174C /* Plant-Parenthood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Plant-Parenthood-Info.plist"; sourceTree = SOURCE_ROOT; };
 		41B8806F29109D6C005367CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		41B8807129109D97005367CB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				41B8807329109DAA005367CB /* ScheduleView.swift */,
 				41B880752911D456005367CB /* MyPlantsView.swift */,
 				411898442911E1430050C6C2 /* AddPlantView.swift */,
+				411CF8BE293ECBAF00869078 /* AddTaskView.swift */,
 				41FB1141293E47AA0005B8E3 /* PlantProfileView.swift */,
 			);
 			path = Views;
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411CF8BF293ECBAF00869078 /* AddTaskView.swift in Sources */,
 				411898452911E1430050C6C2 /* AddPlantView.swift in Sources */,
 				41B8807429109DAA005367CB /* ScheduleView.swift in Sources */,
 				41B8807229109D97005367CB /* SearchView.swift in Sources */,

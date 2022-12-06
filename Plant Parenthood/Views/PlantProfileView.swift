@@ -10,12 +10,14 @@ import SwiftUI
 struct PlantProfileView: View {
     @EnvironmentObject var thePlantItemList: PlantItemList
     @State var showModal: Bool = false
+    @State var showModal2: Bool = false
     var plantItem: PlantItem
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.green.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
+                ScrollView(.vertical) {
                     VStack {
                         let image = getImageFromDir(plantItem.plantItemURL)
                         let name = plantItem.plantItemName
@@ -45,16 +47,30 @@ struct PlantProfileView: View {
                                 .cornerRadius(10)
                                 .foregroundColor(.white)
                                 .padding()
-//                                .onTapGesture {
-//                                    showSheet = true
-//                                }
+                                .onTapGesture {
+                                    self.showModal2.toggle()
+                                }
                         }
                         Spacer()
                     }
+                }
+                if showModal2 {
+                    Rectangle() // the semi-transparent overlay
+                        .foregroundColor(Color.black.opacity(0.5))
+                        .edgesIgnoringSafeArea(.all)
+
+                    GeometryReader { geometry in // the modal container
+                        RoundedRectangle(cornerRadius: 16)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .overlay(AddTaskView(showModal2: self.$showModal2))
+                    }
+                    .transition(.move(edge: .bottom))
+                }
             }
         }
         .toolbar {
-            Button(action: {self.showModal.toggle()}) {
+            Button(action: {thePlantItemList.removePlantItem(trashPlantItem: plantItem)}) {
                 Image(systemName: "trash")
                     .resizable()
                     .scaledToFit()
@@ -64,6 +80,8 @@ struct PlantProfileView: View {
         }
         .navigationTitle(plantItem.plantItemName).font(.system(size: 50))
         .navigationBarTitleDisplayMode(.inline)
+
+
     }
 }
 
