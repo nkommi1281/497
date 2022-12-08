@@ -61,9 +61,6 @@ struct AddPlantView: View {
     
     var body: some View {
             NavigationView {
-                ZStack {
-                    Color.green.opacity(0.4)
-                        .edgesIgnoringSafeArea(.all)
                     Form {
                         HStack {
                             Spacer()
@@ -117,7 +114,6 @@ struct AddPlantView: View {
                     .sheet(isPresented: $showSheet) {
                         ImagePicker(sourceType: .camera, selectedImage: self.$image)
                     }
-                }
             }
             .navigationBarTitle("Add New Plant")
         }

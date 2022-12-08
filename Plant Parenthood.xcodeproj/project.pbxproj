@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		411898452911E1430050C6C2 /* AddPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411898442911E1430050C6C2 /* AddPlantView.swift */; };
 		411CF8BF293ECBAF00869078 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411CF8BE293ECBAF00869078 /* AddTaskView.swift */; };
+		4178DB3E294175B10087751F /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178DB3D294175B10087751F /* SearchResultView.swift */; };
+		4178DB40294266C70087751F /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178DB3F294266C70087751F /* EditTaskView.swift */; };
+		4178DB42294278990087751F /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178DB41294278990087751F /* EditPlantView.swift */; };
 		41B8807029109D6C005367CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8806F29109D6C005367CB /* HomeView.swift */; };
 		41B8807229109D97005367CB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8807129109D97005367CB /* SearchView.swift */; };
 		41B8807429109DAA005367CB /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8807329109DAA005367CB /* ScheduleView.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		411898442911E1430050C6C2 /* AddPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantView.swift; sourceTree = "<group>"; };
 		411CF8BE293ECBAF00869078 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		4178DB3D294175B10087751F /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		4178DB3F294266C70087751F /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		4178DB41294278990087751F /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
 		4190FAAF293D74A6001D174C /* Plant-Parenthood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Plant-Parenthood-Info.plist"; sourceTree = SOURCE_ROOT; };
 		41B8806F29109D6C005367CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		41B8807129109D97005367CB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,9 @@
 				411898442911E1430050C6C2 /* AddPlantView.swift */,
 				411CF8BE293ECBAF00869078 /* AddTaskView.swift */,
 				41FB1141293E47AA0005B8E3 /* PlantProfileView.swift */,
+				4178DB41294278990087751F /* EditPlantView.swift */,
+				4178DB3F294266C70087751F /* EditTaskView.swift */,
+				4178DB3D294175B10087751F /* SearchResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				411CF8BF293ECBAF00869078 /* AddTaskView.swift in Sources */,
+				4178DB40294266C70087751F /* EditTaskView.swift in Sources */,
+				4178DB3E294175B10087751F /* SearchResultView.swift in Sources */,
 				411898452911E1430050C6C2 /* AddPlantView.swift in Sources */,
 				41B8807429109DAA005367CB /* ScheduleView.swift in Sources */,
 				41B8807229109D97005367CB /* SearchView.swift in Sources */,
@@ -312,6 +323,7 @@
 				41D6E39D290075B60007A76D /* ContentView.swift in Sources */,
 				41B880762911D456005367CB /* MyPlantsView.swift in Sources */,
 				41FB1147293E4F830005B8E3 /* PlantItemList.swift in Sources */,
+				4178DB42294278990087751F /* EditPlantView.swift in Sources */,
 				41D6E39B290075B60007A76D /* Plant_ParenthoodApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

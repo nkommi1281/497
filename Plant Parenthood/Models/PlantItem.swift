@@ -37,6 +37,9 @@ struct PlantItem: Hashable {
     mutating func addTask (task: Task) {
         tasks.append(task)
     }
+    mutating func removeTask(task: Task) {
+        tasks.removeAll(where: {$0.name == task.name})
+    }
     
     public func getTasks() -> [Task] {
         return tasks

@@ -10,18 +10,27 @@ struct ScheduleView: View {
             Color.green.opacity(0.4)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Task Calendar")
-                    .font(.system(size: 37))
-                    .fontWeight(.bold)
-                    .padding(.top, 20)
+                HStack {
+                    Text("Task Calendar")
+                        .font(.system(size: 33))
+                        .fontWeight(.bold)
+                        .padding(.top, 20)
+                        .padding()
+                    Spacer()
+                }
                 DatePicker(
                     "Start Date",
                     selection: $date,
                     displayedComponents: [.date]
                 )
                 .datePickerStyle(.graphical)
-                Text("Tasks for: \(date.formatted(.dateTime.day().month().year()))")
-                    .fontWeight(.bold)
+                HStack {
+                    Text("Tasks for \(date.formatted(.dateTime.day().month().year())):")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                    Spacer()
+                }
                 List {
                     ForEach(thePlantItemList.getPlantItemList(), id: \.self) { item in
                          ForEach(item.getTasks(), id: \.self) { task in
@@ -33,11 +42,8 @@ struct ScheduleView: View {
                     }
                     .listRowBackground(Color.purple.opacity(0.2))
                 }
-                .background(Color.green.opacity(0.2))
+                .background(Color.green.opacity(0.4))
                 .scrollContentBackground(.hidden)
-                
-                
-                Spacer()
             }
         }
     }
