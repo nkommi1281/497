@@ -36,13 +36,14 @@ struct ScheduleView: View {
                          ForEach(item.getTasks(), id: \.self) { task in
                              if task.days.contains(date.formatted(.dateTime.day().month().year())){
                                  Text("\(task.name) for plant: \(item.plantItemName)")
+                                     .for(.system(size: 22))
                                      .fontWeight(.bold)
                              }
                         }
                     }
                     .listRowBackground(Color.purple.opacity(0.2))
                 }
-                .background(Color.green.opacity(0.4))
+                .background(Color.green.opacity(0.2))
                 .scrollContentBackground(.hidden)
             }
         }

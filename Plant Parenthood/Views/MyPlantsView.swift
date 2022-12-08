@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyPlantsView: View {
     @State var showModal: Bool = false
+    @State private var isPresentingConfirm: Bool = false
     @EnvironmentObject var thePlantItemList: PlantItemList
     
     let layout = [
@@ -61,30 +62,48 @@ struct MyPlantsView: View {
                                                 RoundedRectangle(cornerRadius: 25, style: .continuous)
                                                     .fill(.black).opacity(0.2)
                                                     .frame(width: 150, height: 150)
+                                                    .padding(.top, 10)
                                                 if image != nil {
                                                     Image(uiImage: image!)
                                                         .resizable()
-                                                        .frame(width: 100, height: 100)
-                                                        .background(Color.black.opacity(0.2))
+                                                        .frame(width: 125, height: 125)
+                                                        .background(Color.purple.opacity(0.2))
                                                         .aspectRatio(contentMode: .fit)
                                                         .clipShape(Circle())
-                                                        .padding(8)
+                                                        .padding(.leading, 10)
                                                         .rotationEffect(.degrees(90))
                                                 }
                                             }
-                                            Text(name).font(.headline).fontWeight(.bold).foregroundColor(.black)
+                                            Text(name).font(.system(size: 22)).fontWeight(.bold).foregroundColor(.black)
                                         }
                                     }
                                 }
                             })
                         }
                         .toolbar {
-                            Button(action: {self.showModal.toggle()}) {
-                                Image(systemName: "plus.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 30, height:30)
-                                    .foregroundColor(.black)
+                            if showModal {
+                                Button(action: {
+                                    isPresentingConfirm.toggle()
+                                }) {
+                                    Image(systemName: "xmark")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height:30)
+                                        .foregroundColor(.black)
+                                }.confirmationDialog("Are you sure?", isPresented: $isPresentingConfirm) {
+                                    Button("Discard this draft?", role: .destructive) {
+                                        self.showModal.toggle()
+                                    }
+                                }
+                            }
+                            else {
+                                Button(action: {self.showModal.toggle()}) {
+                                    Image(systemName: "plus.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height:30)
+                                        .foregroundColor(.black)
+                                }
                             }
                         }
                     }

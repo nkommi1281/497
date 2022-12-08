@@ -14,6 +14,7 @@ struct EditPlantView: View {
     @State var species: String = ""
     @State private var image = UIImage()
     @State private var showSheet = false
+    @State private var changePhotoView = false
     var plantItem: PlantItem
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct EditPlantView: View {
                     HStack {
                         Spacer()
                         let existingImage = getImageFromDir(plantItem.plantItemURL)
-                        if existingImage != nil {
+                        if existingImage != nil && !changePhotoView {
                             Image(uiImage: existingImage!)
                                 .resizable()
                                 .frame(width: 200, height: 200)
@@ -51,6 +52,7 @@ struct EditPlantView: View {
                         .foregroundColor(.black)
                         .onTapGesture {
                             showSheet = true
+                            changePhotoView = true
                         }
                     Section(header: Text("Plant Information")) {
                         TextField("\(plantItem.plantItemName)", text: $name)
@@ -68,7 +70,10 @@ struct EditPlantView: View {
                                 print("Unable to Write Image Data to Disk")
                             }
                         }
-                        let userPlantItem = PlantItem(name: name, species: species, imageName: name, url: urlstring)
+                        var userPlantItem = PlantItem(name: name, species: species, imageName: name, url: urlstring)
+                        for transferTask in plantItem.getTasks() {
+                            userPlantItem.addTask(task: transferTask)
+                        }
                         thePlantItemList.removePlantItem(trashPlantItem: plantItem)
                         thePlantItemList.addPlantItem(newPlantItem: userPlantItem)
                         self.showModal4.toggle()
@@ -84,7 +89,7 @@ struct EditPlantView: View {
                     ImagePicker(sourceType: .camera, selectedImage: self.$image)
                 }
         }
-        .navigationBarTitle("Edit Plant")
+        .navigationTitle("Edit Plant")
     }
 }
 

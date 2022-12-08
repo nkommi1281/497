@@ -36,8 +36,8 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .tag(Tab.home)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
-                //.toolbarColorScheme(.light, for: .tabBar)
+                //.toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                .toolbarColorScheme(.light, for: .tabBar)
             MyPlantsView()
                 .tabItem {
                     Image(systemName: "heart")
@@ -45,8 +45,8 @@ struct ContentView: View {
                 }
                 .tag(Tab.plants)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
-                //.toolbarColorScheme(.light, for: .tabBar)
+                //.toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                .toolbarColorScheme(.light, for: .tabBar)
             ScheduleView()
                 .tabItem {
                     Image(systemName: "calendar")
@@ -54,8 +54,8 @@ struct ContentView: View {
                 }
                 .tag(Tab.schedule)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
-                //.toolbarColorScheme(.light, for: .tabBar)
+                //.toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                .toolbarColorScheme(.light, for: .tabBar)
             SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
@@ -63,8 +63,8 @@ struct ContentView: View {
                 }
                 .tag(Tab.search)
                 .toolbar(.visible, for: .tabBar)
-                .toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
-                //.toolbarColorScheme(.light, for: .tabBar)
+                //.toolbarBackground(Color.brown.opacity(0.4), for: .tabBar)
+                .toolbarColorScheme(.light, for: .tabBar)
         }
         .environmentObject(tabController)
     }

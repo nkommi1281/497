@@ -26,7 +26,7 @@ struct EditTaskView: View {
                             .frame(height: 20)
                     }.textCase(nil)
                     Section {
-                        Picker("\(taskItem.frequency)", selection: $selectedFreq) {
+                        Picker("Frequency", selection: $selectedFreq) {
                               ForEach(frequencies, id: \.self) {
                                   Text($0)
                               }

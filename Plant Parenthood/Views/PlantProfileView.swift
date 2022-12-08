@@ -44,7 +44,7 @@ struct PlantProfileView: View {
                         }
                         Divider()
                         HStack {
-                            Text("Tasks for \(plantItem.plantItemName):").font(.system(size: 22)).fontWeight(.bold).padding()
+                            Text("Tasks:").font(.system(size: 22)).fontWeight(.bold).padding()
                             Spacer()
                             Text("Add New")
                                 .font(.body)
@@ -60,7 +60,7 @@ struct PlantProfileView: View {
                         }
                         ForEach(plantItem.getTasks(), id: \.self) { task in
                             HStack {
-                                Text(task.name).font(.system(size: 15)).fontWeight(.bold).padding()
+                                Text("\(task.name), \(task.frequency)").font(.system(size: 15)).fontWeight(.bold).padding()
                                 Spacer()
                                 //Text(task.frequency).font(.system(size: 15)).fontWeight(.bold).padding()
                                 //Spacer()
@@ -150,11 +150,13 @@ struct PlantProfileView: View {
                         .frame(width: 30, height:30)
                         .foregroundColor(.black)
                 }.confirmationDialog("Are you sure?", isPresented: $isPresentingConfirm2) {
-                    Button("Discard this task?", role: .destructive) {
-                        if showModal2 {
+                    if showModal2 {
+                        Button("Discard this task?", role: .destructive) {
                             self.showModal2.toggle()
                         }
-                        else {
+                    }
+                    else {
+                        Button("Discard changes?", role: .destructive) {
                             self.showModal3.toggle()
                         }
                     }
