@@ -3,8 +3,12 @@ import SwiftUI
 struct ScheduleView: View {
 
     @State private var date = Date()
+    @State var isChecked: Bool = false
+    @State private var isPresentingConfirm3: Bool = false
     @EnvironmentObject var thePlantItemList: PlantItemList
-    //let tasks = ["Water - Plant #1", "Fertilize - Plant #2", "Water - Plant #2"]
+    func toggle(){
+        isPresentingConfirm3.toggle()
+    }
     var body: some View {
         ZStack {
             Color.green.opacity(0.4)
@@ -35,9 +39,20 @@ struct ScheduleView: View {
                     ForEach(thePlantItemList.getPlantItemList(), id: \.self) { item in
                          ForEach(item.getTasks(), id: \.self) { task in
                              if task.days.contains(date.formatted(.dateTime.day().month().year())){
-                                 Text("\(task.name) for plant: \(item.plantItemName)")
-                                     .for(.system(size: 22))
-                                     .fontWeight(.bold)
+                                
+                                 HStack{
+                                     Button(action: toggle) {
+                                         Image(systemName: isChecked ? "checkmark.square" : "square")
+                                     }.confirmationDialog("Are you sure?", isPresented: $isPresentingConfirm3) {
+                                         Button("Delete this day from the task?", role: .destructive) {
+                                             thePlantItemList.removePlantTaskDay(plantItem: item, taskItem: task, dayItem: date.formatted(.dateTime.day().month().year()))
+                                         }
+                                     }
+                                     Text("\(task.name) for plant: \(item.plantItemName)")
+                                         .font(.system(size: 22))
+                                         .fontWeight(.bold)
+                                 }
+                                 
                              }
                         }
                     }

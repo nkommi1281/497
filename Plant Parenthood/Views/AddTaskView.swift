@@ -14,7 +14,7 @@ struct AddTaskView: View {
     @State var frequency: String = ""
     @State private var date = Date()
     @State private var selectedFreq = "Daily"
-      let frequencies = ["Daily", "Weekly", "Monthly"]
+      let frequencies = ["One-Time", "Daily", "Weekly", "Monthly"]
     var plantItem: PlantItem
     var body: some View {
          NavigationStack {
@@ -47,7 +47,7 @@ struct AddTaskView: View {
                                                   var nextweek = date
                                                   var dateComponent = DateComponents()
                                                   dateComponent.day = 7
-                                                  for i in 1...5 {
+                                                  for _ in 1...5 {
                                                       nextweek = Calendar.current.date(byAdding: dateComponent, to: nextweek)!
                                                       days.append(nextweek.formatted(.dateTime.day().month().year()))
                                                   }
@@ -74,7 +74,10 @@ struct AddTaskView: View {
                                                       days.append(nextmonth.formatted(.dateTime.day().month().year()))
                                                   }
                                                  print(days)
-                                              }
+                                             } else if (selectedFreq == "One-Time") {
+                                                 days.append(date.formatted(.dateTime.day().month().year()))
+                                             }
+                         
                                             let plantTask = Task(namevar: taskName, freqvar: selectedFreq, daysvar: days)
                                              thePlantItemList.addPlantTask(plantItem: plantItem, taskItem: plantTask)
                                              self.showModal2.toggle()

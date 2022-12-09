@@ -32,6 +32,10 @@ class PlantItemList: ObservableObject {
         let idx = itemList.firstIndex(where: {$0.plantItemName == plantItem.plantItemName})!
         itemList[idx].removeTask(task: taskItem)
     }
+    public func removePlantTaskDay(plantItem: PlantItem, taskItem: Task, dayItem: String) {
+        let idx = itemList.firstIndex(where: {$0.plantItemName == plantItem.plantItemName})!
+        itemList[idx].removeTaskDay(task: taskItem, day: dayItem)
+    }
     
     public func removePlantItem (trashPlantItem: PlantItem) {
         itemList.removeAll(where: {$0.plantItemName == trashPlantItem.plantItemName})

@@ -40,9 +40,11 @@ struct PlantItem: Hashable {
     mutating func removeTask(task: Task) {
         tasks.removeAll(where: {$0.name == task.name})
     }
-    
+    mutating func removeTaskDay(task: Task, day: String) {
+        let idx = tasks.firstIndex(where: {$0.name == task.name})!
+        tasks[idx].days.removeAll(where: {$0 == day})
+    }
     public func getTasks() -> [Task] {
         return tasks
     }
-    
 }
